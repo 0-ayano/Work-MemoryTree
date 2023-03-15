@@ -1,9 +1,12 @@
 <template>
     <h1 id="title">Memory Tree</h1>
+
     <btnBar bntText="日記を書く" id="write" @click="openWriteDiary()" />
     <btnBar bntText="日記を見る" id="watch" @click="openWatchDiary()" />
     <btnBar bntText="日記を編集する" id="edit" @click="openEditDiary()" />
     <btnBar bntText="日記を削除する" id="edit" @click="openDeleteDiary()" />
+
+    <button type="submit" id="treeBtn" @click="TREE()">Tree</button>
 </template>
 
 <script setup>
@@ -28,6 +31,9 @@ const openDeleteDiary = () => {
     router.push('delete')
 }
 
+const TREE = () => {
+    router.push('/tree')
+}
 
 </script>
 
@@ -64,5 +70,21 @@ const openDeleteDiary = () => {
     margin-right: auto;
     margin-top: 20px;
     min-width: 200px;
+}
+
+#treeBtn {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    bottom: 3%;
+    right: 3%;
+
+    background-color: var(--color-orange);
+    color: white;
+    border: 1px solid var(--color-orange);
+    border-radius: 8px;
+    margin: 20px auto;
+    cursor: pointer;
+    font-size: large;
 }
 </style>
